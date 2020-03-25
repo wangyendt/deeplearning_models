@@ -17,8 +17,8 @@ def read_data_and_preprocessing():
     data = pd.read_excel('data.xlsx')
     # print(data.head())
     data.iloc[:, 1:] = data.iloc[:, 1:].apply(LabelEncoder().fit_transform)
-    data = data.drop(labels=['编号', '好瓜', ], axis=1)
     target = data['好瓜']
+    data = data.drop(labels=['编号', '好瓜', ], axis=1)
     return data, target
 
 
